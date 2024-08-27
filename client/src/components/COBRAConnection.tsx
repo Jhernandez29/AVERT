@@ -100,7 +100,9 @@ function COBRAConnectionContent() {
       {cobraApiState === "pending" && (
         <div className="usa-alert usa-alert--slim usa-alert--info">
           <div className="usa-alert__body">
-            <p className="usa-alert__text">Sending data to COBRA...</p>
+            <p className="usa-alert__text">
+              Sending data to COBRA. <br /> This may take a few minutes.
+            </p>
           </div>
         </div>
       )}
@@ -145,7 +147,8 @@ function COBRAConnectionContent() {
             const cobraAppWindow = window.open("", "_blank");
 
             if (cobraAppWindow) {
-              cobraAppWindow.document.write("Sending data to COBRA...");
+              cobraAppWindow.document.body.outerHTML =
+                "<div>Sending data to COBRA. <br/> This may take a few minutes.<div>";
               cobraAppWindow.document.body.style.fontFamily = "sans-serif";
             }
 
