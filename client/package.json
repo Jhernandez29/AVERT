@@ -14,7 +14,7 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "set VITE_APP_URL=http://localhost:3001&& vite",
+    "dev": "VITE_APP_URL=http://localhost:3001 vite",
     "build:dev": "tsc && vite build --mode development && ./scripts/update-server-public.sh",
     "build:prod": "tsc && vite build --mode production && ./scripts/update-server-public.sh",
     "preview": "vite preview",
